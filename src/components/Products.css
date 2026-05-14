@@ -1,0 +1,204 @@
+.products-section {
+  padding: 8rem 0;
+  background-color: var(--cream-light);
+  position: relative;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.product-img-wrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-price {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+}
+
+.product-info {
+  padding: 2rem;
+  text-align: center;
+}
+
+.product-info h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--coffee-dark);
+  margin-bottom: 1rem;
+}
+
+.product-info p {
+  color: var(--coffee-medium);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--coffee-dark);
+  border: 2px solid var(--coffee-dark);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--coffee-dark);
+  color: var(--cream-light);
+}
+
+.menu-banner {
+  position: relative;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 21, 17, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--cream-light);
+  padding: 2rem;
+}
+
+.banner-overlay h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.banner-overlay p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/* Modal Styles */
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.menu-modal-content {
+  position: relative;
+  background: var(--cream);
+  padding: 1rem;
+  border-radius: 15px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.modal-menu-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .close-modal-btn {
+    top: -40px;
+    right: 0;
+  }
+}
