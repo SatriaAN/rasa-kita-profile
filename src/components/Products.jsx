@@ -12,8 +12,8 @@ const productsData = [
   },
   {
     id: 2,
-    name: 'Matcha Greentea Latte',
-    description: 'Perpaduan bubuk matcha premium dengan susu segar. Lembut dan menenangkan.',
+    name: 'Green Tea Thailand',
+    description: 'Perpaduan bubuk Green Tea Thailand premium dengan susu segar. Lembut dan menenangkan.',
     price: 'Rp 15.000',
     image: '/img/kopi-greentea.jpeg'
   },
@@ -28,6 +28,13 @@ const productsData = [
 
 const Products = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleOrder = (productName) => {
+    const phoneNumber = "6281295008318";
+    const message = `Halo Rasa Kita! 👋\nSaya mau pesan *${productName}*. Bisa dibantu proses ordernya?`;
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
+  };
 
   return (
     <section id="products" className="products-section">
@@ -47,7 +54,7 @@ const Products = () => {
               <div className="product-info">
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
-                <button className="btn-outline">Pesan Sekarang</button>
+                <button className="btn-outline" onClick={() => handleOrder(product.name)}>Pesan Sekarang</button>
               </div>
             </div>
           ))}
